@@ -5,9 +5,11 @@ jobs:
   outside:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "secret visible outside the environment: ${{ secrets.POC_SECRET != '' }}"
+      - run: |
+          echo "secret visible outside the environment: ${{ secrets.POC_SECRET != '' }}"
   inside:
     runs-on: ubuntu-latest
     environment: demo
     steps:
-      - run: echo "secret visible inside the environment: ${{ secrets.POC_SECRET != '' }}"
+      - run: |
+          echo "secret visible inside the environment: ${{ secrets.POC_SECRET != '' }}"
